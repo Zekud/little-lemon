@@ -226,3 +226,10 @@ footer aside {
 #eighth-aside ul {
   list-style: none;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 200px;
+  justify-content: center;
+  align-items: center;
+}

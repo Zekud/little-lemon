@@ -1,6 +1,4 @@
 import "./App.css";
-import Footer from "./Footer";
-import Header from "./Header";
 import Chicago from "./Chicago";
 import Nav from "./Nav";
 import BookingPage from "./BookingPage";
