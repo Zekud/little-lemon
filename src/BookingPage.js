@@ -9,6 +9,7 @@ function BookingPage() {
     "20:00",
     "21:00",
   ]);
+
   return (
     <>
       <BookingForm

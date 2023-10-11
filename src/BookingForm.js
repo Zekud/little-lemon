@@ -1,12 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function BookingForm({ availableTimes, setAvailableTimes }) {
   const [formData, setFormData] = useState({
     date: "",
-    time: "17:00", // Default time
+    time: "17:00",
     guests: "",
     occasion: "",
   });
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -16,12 +18,31 @@ function BookingForm({ availableTimes, setAvailableTimes }) {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedTimes = ["17:00", "18:00", "19:00", "20:00", "21:00"];
-    setAvailableTimes(updatedTimes);
-  };
 
+    // Update the available times
+    const updatedTimes = availableTimes.filter((time) => time != formData.time);
+    setAvailableTimes(updatedTimes);
+
+    try {
+      if (window.submitAPI) {
+        const success = await window.submitAPI(formData);
+        if (success) {
+          navigate("/confirmation");
+          console.log("Form submitted successfully");
+        } else {
+          console.log("Form submission failed");
+        }
+      } else {
+        console.error(
+          "submitAPI not found. The script may not have loaded correctly."
+        );
+      }
+    } catch (error) {
+      console.error("Error while submitting the form:", error);
+    }
+  };
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="res-date">Choose date</label>
