@@ -1,7 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import img from "./icons_assets/restauranfood.jpg";
 
 function Header() {
+  const navigate = useNavigate();
   return (
     <header>
       <aside id="first-aside">
@@ -13,10 +15,17 @@ function Header() {
           doloremque molestiae temporibus, minus nisi fugiat maiores. Natus
           animi dignissimos cumque doloribus eos!
         </p>
-        <button id="first-btn">Reserve a Table</button>
+        <button
+          id="first-btn"
+          onClick={() => {
+            navigate("/booking-page");
+          }}
+        >
+          Reserve a Table
+        </button>
       </aside>
       <aside id="second-aside">
-        <img src={img} />
+        <img src={img} alt="delicious food" />
       </aside>
     </header>
   );

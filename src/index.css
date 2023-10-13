@@ -98,6 +98,9 @@ header p {
   cursor: pointer;
   margin-top: 20px;
 }
+#first-btn:hover {
+  border: 2px solid #000;
+}
 main {
   display: flex;
   flex-direction: column;
