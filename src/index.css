@@ -226,10 +226,79 @@ footer aside {
 #eighth-aside ul {
   list-style: none;
 }
+.form-div {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  margin-top: 30px;
+  align-items: center;
+}
 form {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
-  justify-content: center;
-  align-items: center;
+  width: 40%;
+  height: auto;
+  border: 2px solid #495e57;
+  border-radius: 10px;
+}
+#form-date {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+#date {
+  display: flex;
+  flex-direction: column;
+}
+#form-time {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+#form-guest {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+#guest {
+  display: flex;
+  flex-direction: column;
+}
+#form-occassion {
+  font-size: 25px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 5px 16px;
+}
+#form-submit {
+  font-size: large;
+  margin: 10px;
+  padding: 5px 5px;
+  font-size: xx-large;
+  background-color: #495e57;
+  color: #fff;
+  border-radius: 10px;
+}
+sup {
+  color: red;
+  font-size: 25px;
+}
+.disabled {
+  cursor: not-allowed;
+}
+.confirm-message {
+  font-size: small;
+  color: red;
 }
