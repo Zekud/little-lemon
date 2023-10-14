@@ -99,7 +99,8 @@ header p {
   margin-top: 20px;
 }
 #first-btn:hover {
-  border: 2px solid #000;
+  border: 1px solid #000;
+  background-color: #e1be20;
 }
 main {
   display: flex;
@@ -292,6 +293,7 @@ form {
   font-size: xx-large;
   background-color: #495e57;
   color: #fff;
+  border: 1px solid #495e57;
   border-radius: 10px;
 }
 sup {
@@ -300,6 +302,12 @@ sup {
 }
 .disabled {
   cursor: not-allowed;
+}
+.enabled {
+  cursor: pointer;
+}
+.enabled:hover {
+  transform: translate(1px, -1px);
 }
 .confirm-message {
   font-size: small;

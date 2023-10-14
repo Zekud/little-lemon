@@ -21,7 +21,7 @@ function Chicago() {
           </p>
         </aside>
         <aside id="fourth-aside">
-          <img src={owners} />
+          <img src={owners} alt="Owners" />
         </aside>
       </section>
     </section>

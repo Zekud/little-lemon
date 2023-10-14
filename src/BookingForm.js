@@ -141,7 +141,7 @@ function BookingForm({ availableTimes, setAvailableTimes }) {
         </div>
         <button
           disabled={!isValid()}
-          className={isValid() ? "" : "disabled"}
+          className={isValid() ? "enabled" : "disabled"}
           type="submit"
           id="form-submit"
         >

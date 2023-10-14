@@ -16,7 +16,7 @@ function Specials() {
         <div class="row row-cols-1 row-cols-md-3 g-4">
           <div class="col">
             <div class="card h-100">
-              <img src={salad} class="card-img-top" alt="..." />
+              <img src={salad} class="card-img-top" alt="salad" />
               <div class="card-body">
                 <div id="card-title-div">
                   <h4 class="card-title">Greek Salad</h4>
@@ -36,7 +36,7 @@ function Specials() {
           </div>
           <div class="col">
             <div class="card h-100">
-              <img src={bruchetta} class="card-img-top" alt="..." />
+              <img src={bruchetta} class="card-img-top" alt="bruchetta" />
               <div class="card-body">
                 <div id="card-title-div">
                   <h4 class="card-title">Bruchetta</h4>
@@ -55,7 +55,7 @@ function Specials() {
           </div>
           <div class="col">
             <div class="card h-100">
-              <img src={cream} class="card-img-top" alt="..." />
+              <img src={cream} class="card-img-top" alt="cream" />
               <div class="card-body">
                 <div id="card-title-div">
                   <h4 class="card-title">Lemon dessert</h4>
