@@ -64,17 +64,17 @@ function Footer() {
         <h4>Follow Us</h4>
         <ul>
           <li>
-            <a href="">
+            <a href="#">
               <i className="fa-brands fa-facebook-f fa-xl"></i>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <i className="fa-brands fa-x-twitter fa-xl"></i>
             </a>
           </li>
           <li>
-            <a href="">
+            <a href="#">
               <i className="fa-brands fa-instagram fa-xl"></i>
             </a>
           </li>
