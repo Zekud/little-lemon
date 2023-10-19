@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import img from "./icons_assets/restauranfood.jpg";
+import img from "../icons_assets/restauranfood.jpg";
 
 function Header() {
   const navigate = useNavigate();
@@ -10,10 +10,8 @@ function Header() {
         <h1>Little Lemon</h1>
         <h3>Chicago</h3>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam
-          molestias recusandae natus amet iste repellendus culpa dolorum
-          doloremque molestiae temporibus, minus nisi fugiat maiores. Natus
-          animi dignissimos cumque doloribus eos!
+          We are a family owned Mediterranean retaurant, focused on traditional
+          recipes served with a modern twist.
         </p>
         <button
           id="first-btn"

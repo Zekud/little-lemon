@@ -1,11 +1,12 @@
 import "./App.css";
-import Chicago from "./Chicago";
-import Nav from "./Nav";
-import BookingPage from "./BookingPage";
+import Nav from "./components/Nav";
+import BookingPage from "./components/BookingPage";
 import { Route, Routes } from "react-router-dom";
-import Homepage from "./Homepage";
-import Specials from "./Specials";
-import ConfirmedBooking from "./ConfirmedBooking";
+import Homepage from "./components/Homepage";
+import Specials from "./components/Specials";
+import ConfirmedBooking from "./components/ConfirmedBooking";
+import ABOUT from "./components/About";
+import Footer from "./components/Footer";
 function App() {
   return (
     <>
@@ -13,10 +14,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/menu" element={<Specials />} />
-        <Route path="/chicago" element={<Chicago />} />
+        <Route path="/about" element={<ABOUT />} />
         <Route path="/booking-page" element={<BookingPage />} />
         <Route path="/confirmation" element={<ConfirmedBooking />} />
       </Routes>
+      <Footer />
     </>
   );
 }

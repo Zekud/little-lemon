@@ -1,211 +1,323 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200&family=Markazi+Text&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: "Markazi Text", serif, "Karla", sans-serif;
+  overflow-x: hidden;
 }
-
+a:-webkit-any-link {
+  color: inherit;
+  text-decoration: none;
+}
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: "Markazi Text", serif, source-code-pro, Menlo, Monaco, Consolas,
+    "Courier New", monospace;
 }
 nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  z-index: 1;
 }
 nav ul {
   display: flex;
   align-items: center;
+  justify-content: center;
   list-style: none;
-  margin-bottom: 0px;
+  margin: 0;
+  padding: 20px;
+  height: 100%;
 }
 nav ul li {
-  margin: 5px;
-  padding: 5px;
   cursor: pointer;
 }
 nav img {
   width: 204px;
-  height: 50px;
+  height: 45px;
 }
-nav .nav-item:link {
-  color: black;
+nav .nav-item {
+  color: #495e57;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
+  font-weight: bold;
+  font-family: "Markazi Text", serif;
+  padding: 10px 15px;
+  border-radius: 10px;
   transition: all 0.3s ease-in-out;
 }
-nav .nav-item:visited {
-  color: blueviolet;
+nav :not(.active).nav-item:hover {
+  background-color: #edefee;
 }
-nav .nav-item:hover {
-  color: #ffff;
-  background-color: black;
-  font-weight: bold;
-  text-decoration-line: underline;
-  text-decoration-color: #ffff;
+nav .active {
+  background-color: #fbdabb;
 }
 header {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #495e57;
-  height: 430px;
+  height: 400px;
   padding: 20px;
-  position: relative;
 }
 header aside {
   max-width: 560px;
 }
-#first-aside {
-  margin-left: 50px;
+#first-aside p {
+  max-width: 250px;
+  color: #fff;
+  font-size: 20px;
+  font-family: "Karla" sans-serif;
 }
 #second-aside {
-  margin-left: 50px;
-  position: absolute;
-  top: 30px;
-  left: 710px;
+  margin-top: 110px;
 }
 header h1 {
   color: #face14;
   font-weight: bold;
   font-size: 64px;
-  font-family: "Courier New", Courier, monospace;
+  font-family: "Markazi Text", serif;
+  margin-bottom: 2px;
 }
 header h3 {
   font-size: 40px;
-  color: #fff;
+  color: #edefee;
+  font-family: "Markazi Text", serif;
+  margin-bottom: 25px;
 }
 #second-aside img {
-  height: 442px;
-  width: 421px;
-}
-
-header p {
-  color: #fff;
-  font-size: 18px;
+  height: 430px;
+  width: 350px;
+  border-radius: 20px;
 }
 #first-btn {
-  font-size: 40px;
+  font-size: 18px;
   font-weight: bold;
+  font-family: "Karla", sans-serif;
   background-color: #face14;
   color: #000000;
-  width: 330px;
-  height: 76px;
+  width: 230px;
+  height: 60px;
   border-radius: 16px;
   border: 0px solid #face14;
   cursor: pointer;
-  margin-top: 20px;
+  margin-top: 12px;
+  outline: none;
 }
 #first-btn:hover {
-  border: 1px solid #000;
-  background-color: #e1be20;
+  background-color: #fde57c;
 }
 main {
   display: flex;
   flex-direction: column;
-  align-items: center;
-}
-#first-sec {
-  margin: 20px;
-  padding: 20px;
+  margin-top: 70px;
+  width: 100%;
 }
 #sec-div {
   display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: space-around;
   align-items: center;
-  margin-top: 20px;
+  margin: 16px;
+  padding: 16px;
+  width: 100%;
 }
 #sec-div h1 {
   font-size: 40px;
-  margin-right: 200px;
+  margin: 0px;
+  font-family: "Markazi Text", serif;
 }
 #second-btn {
-  font-size: 40px;
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: bolder;
+  font-family: "Karla", sans-serif;
   background-color: #face14;
   color: #000000;
-  width: 277px;
-  height: 76px;
+  width: 230px;
+  height: 60px;
   border-radius: 16px;
   border: 0px solid #face14;
   cursor: pointer;
-  margin-bottom: 10px;
-  margin-left: 70px;
+  outline: none;
+}
+
+#second-btn:hover {
+  background-color: #fde57c;
 }
 #second-sec {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 900px;
+  width: 100%;
 }
-.card-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#card-title-div {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-#testimonals {
+.whole {
+  width: 270px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  border-radius: 9px 9px 9px 9px;
+  background-color: #edefee;
   margin: 20px;
-  padding: 30px;
+  height: 460px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-#testimonals-1 {
+.whole:hover {
+  box-shadow: 15px 10px 15px rgba(0, 0, 0, 0.3);
+  transform: translate(20px, -20px) scale(1.1) rotateX(-5deg) rotateY(20deg)
+    rotateZ(0.8deg);
+}
+.img-div {
+  width: 100%;
+  height: 180px;
+}
+.img-div img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.price {
   display: flex;
-  justify-content: center;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  padding: 10px;
   align-items: center;
-  width: 900px;
+}
+.price h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  font-family: "Markazi Text" serif;
+  font-weight: 580;
+}
+.price span {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Markazi Text" serif;
+  color: #ee9972;
+}
+.para {
+  width: 100%;
+  padding: 20px;
+  height: 150px;
+}
+.para p {
+  font-family: "Karla" sans-serif;
+  font-size: 19px;
+  line-height: 1.5;
+}
+.foot-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+.foot-div .order-online {
+  font-family: "Karla" sans-serif;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #000;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+}
+.foot-div img {
+  height: 35px;
+  width: 35px;
 }
 #about {
   display: flex;
   padding: 20px;
   flex-direction: column;
   align-items: center;
+  height: auto;
+  margin: 20px 0px 0px 0px;
+  background-color: #edefee;
+  width: 100%;
 }
 #about-1 {
   display: flex;
-  justify-content: space-around;
   align-items: center;
+  width: 100%;
+  height: 450px;
 }
 #third-aside {
-  max-width: 500px;
-  margin-right: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 50%;
+  padding: 20px;
+  margin-left: 10rem;
 }
-#fourth-aside img {
-  height: 350px;
-  width: 400px;
-  border-radius: 16px;
-  margin-top: 20px;
+#third-aside :nth-child(1) {
+  width: 100%;
+}
+#third-aside p {
+  max-width: 400px;
+  margin-right: 50px;
+  font-size: 20px;
+}
+#fourth-aside {
+  max-width: 50%;
+  height: 100%;
+  position: relative;
+  padding: 20px;
+  margin: 20px;
+}
+#fourth-aside :nth-child(1) {
+  position: absolute;
+  top: 8rem;
+  height: 300px;
+  width: 220px;
+  border-radius: 7px;
+  z-index: 1;
+}
+#fourth-aside :nth-child(2) {
+  position: absolute;
+  left: 11rem;
+  height: 300px;
+  width: 230px;
+  border-radius: 7px;
 }
 footer {
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 40px;
-  height: 170px;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  background-color: #333333;
+}
+footer ul {
+  margin: 0;
+  padding: 0;
 }
 footer aside {
-  max-width: 300px;
+  max-width: 400px;
+  height: 150px;
 }
-#fifth-aside {
-  align-self: center;
+footer aside:not(:nth-child(4)) {
+  border-right: 1px solid #edefee;
 }
+
 #fifth-aside img {
-  width: 294px;
-  height: 94px;
+  width: 200px;
+  height: 100px;
 }
 #sixth-aside {
   display: flex;
   flex-direction: column;
-  list-style: none;
-  font-size: small;
   align-items: center;
+  justify-content: center;
+  padding: 0px 50px;
+}
+#sixth-aside li {
+  font-size: 18px;
+  color: #edefee;
 }
 #sixth-aside ul {
   list-style: none;
@@ -213,29 +325,44 @@ footer aside {
 #seventh-aside {
   display: flex;
   flex-direction: column;
-  list-style: none;
-  font-size: small;
-  align-items: center;
+  font-size: 18px;
+  color: #edefee;
+  padding: 0px 20px;
 }
 #seventh-aside ul {
   list-style: none;
+  padding: 10px;
 }
 #eighth-aside {
   display: flex;
   flex-direction: column;
-  list-style: none;
-  font-size: small;
+  font-size: 18px;
   align-items: center;
+  color: #edefee;
+  padding: 0px 20px;
 }
 #eighth-aside ul {
   list-style: none;
+  padding: 10px;
+}
+footer .footer-nav {
+  padding: 5px 5px;
+  border-radius: 6px;
+  transition: all 0.3s ease-in-out;
+}
+footer :not(.active).footer-nav:hover {
+  background-color: #fbdabb;
+  color: #333333;
+}
+footer .active {
+  background-color: #edefee;
+  color: #333333;
 }
 .form-div {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   width: 100%;
-  margin-top: 30px;
+  margin: 20px 0px;
   align-items: center;
 }
 form {
