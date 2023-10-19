@@ -345,6 +345,13 @@ footer aside:not(:nth-child(4)) {
   list-style: none;
   padding: 10px;
 }
+#eighth-aside ul .icons {
+  padding: 5px;
+  background-color: #333333;
+  color: #edefee;
+  border: none;
+  outline: none;
+}
 footer .footer-nav {
   padding: 5px 5px;
   border-radius: 6px;

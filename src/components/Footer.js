@@ -64,19 +64,19 @@ function Footer() {
         <h4>Follow Us</h4>
         <ul>
           <li>
-            <a href="#">
+            <button className="icons">
               <i className="fa-brands fa-facebook-f fa-xl"></i>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button className="icons">
               <i className="fa-brands fa-x-twitter fa-xl"></i>
-            </a>
+            </button>
           </li>
           <li>
-            <a href="#">
+            <button className="icons">
               <i className="fa-brands fa-instagram fa-xl"></i>
-            </a>
+            </button>
           </li>
         </ul>
       </aside>
