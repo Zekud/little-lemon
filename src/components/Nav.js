@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 function Nav() {
   const menu = [
     {
-      path: "/home",
+      path: "/",
       name: "Home",
     },
     {
@@ -42,6 +42,7 @@ function Nav() {
               <NavLink
                 to={element.path}
                 activeClassName="active"
+                exact={element.path == "/"}
                 className="nav-item"
               >
                 {element.name}
