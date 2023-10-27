@@ -34,7 +34,9 @@ function Specials() {
       <section id="first-sec">
         <div id="sec-div">
           <h1>This Week's Specials!</h1>
-          <button id="second-btn">Online Menu</button>
+          <button id="second-btn" onClick={() => navigate("/menu")}>
+            Online Menu
+          </button>
         </div>
       </section>
       <section id="second-sec">

@@ -5,6 +5,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Markazi Text", serif, "Karla", sans-serif;
   overflow-x: hidden;
+  background-color: inherit;
 }
 a:-webkit-any-link {
   color: inherit;
@@ -365,6 +366,7 @@ footer .active {
   background-color: #edefee;
   color: #333333;
 }
+/*
 .form-div {
   display: flex;
   flex-direction: column;
@@ -446,4 +448,135 @@ sup {
 .confirm-message {
   font-size: small;
   color: red;
+}
+*/
+#form-div {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  background-color: #495e57;
+}
+#form-main-div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 50%;
+}
+#reserve-div {
+  display: flex;
+  justify-content: left;
+  color: #face14;
+  font-size: 60px;
+  font-weight: bold;
+}
+#place-container {
+  display: flex;
+  justify-content: space-between;
+}
+.each-place label {
+  margin-right: 20px;
+  font-size: 40px;
+  cursor: pointer;
+  color: #edefee;
+}
+.each-place input[type="radio"] {
+  height: 18px;
+  width: 20px;
+  cursor: pointer;
+  background-color: initial;
+}
+input[type="radio"]:checked {
+  accent-color: #face14;
+}
+#date-dinner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#date-div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#date-div label {
+  font-size: 20px;
+  color: #edefee;
+}
+#date-div input {
+  width: auto;
+  padding: 5px 16px;
+  font-size: 30px;
+  background-color: #edefee;
+  color: #333333;
+  outline: none;
+  border-radius: 10px;
+}
+#dinner {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+#dinner label {
+  font-size: 20px;
+  color: #edefee;
+}
+#dinner select {
+  padding: 5px 16px;
+  font-size: 30px;
+  background-color: #edefee;
+  color: #333333;
+  outline: none;
+  border-radius: 10px;
+}
+#occ-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+#occ {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+#occ label {
+  font-size: 20px;
+  color: #edefee;
+}
+#occ select {
+  width: auto;
+  padding: 5px 16px;
+  font-size: 30px;
+  background-color: #edefee;
+  color: #333333;
+  outline: none;
+  border-radius: 10px;
+}
+#time-div {
+  display: flex;
+  flex-direction: column;
+  width: 45%;
+}
+#time-div label {
+  font-size: 20px;
+  color: #edefee;
+}
+#time-div select {
+  padding: 5px 16px;
+  font-size: 30px;
+  background-color: #edefee;
+  color: #333333;
+  outline: none;
+  border-radius: 10px;
+}
+#form-img-div {
+  display: flex;
+  height: auto;
+}
+#form-img-div img {
+  width: 200px;
+  height: 200px;
+  border-radius: 5px;
 }
