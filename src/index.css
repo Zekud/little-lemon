@@ -436,19 +436,7 @@ sup {
   color: red;
   font-size: 25px;
 }
-.disabled {
-  cursor: not-allowed;
-}
-.enabled {
-  cursor: pointer;
-}
-.enabled:hover {
-  transform: translate(1px, -1px);
-}
-.confirm-message {
-  font-size: small;
-  color: red;
-}
+
 */
 #form-div {
   display: flex;
@@ -574,9 +562,28 @@ input[type="radio"]:checked {
 #form-img-div {
   display: flex;
   height: auto;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0 10px 0;
 }
 #form-img-div img {
-  width: 200px;
+  width: 300px;
   height: 200px;
   border-radius: 5px;
+  margin: 0px 8px 0px 8px;
+}
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  margin: 10px 0px 10px 0px;
+}
+.form-btn button:disabled {
+  cursor: not-allowed;
+}
+.confirm-message {
+  font-size: large;
+  color: red;
 }

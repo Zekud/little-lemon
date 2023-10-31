@@ -7,159 +7,23 @@ import img3 from "../icons_assets/restauranfood.jpg";
 function DateErrorMessage() {
   return <p className="confirm-message">You must choose a date!</p>;
 }
-function GuestErrorMessage() {
-  return <p className="confirm-message">There must be at least one guest!</p>;
+function TimeErrorMessage() {
+  return <p className="confirm-message">You must choose a time!</p>;
 }
-/*
-function BookingForm({ availableTimes, setAvailableTimes }) {
-  const [formData, setFormData] = useState({
-    date: "",
-    time: "17:00",
-    guests: "",
-    occasion: "",
-  });
-  const [dateTouched, setDateTouched] = useState(false);
-  const [guestTouched, setGuestTouched] = useState(false);
-  const navigate = useNavigate();
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      if (window.submitAPI) {
-        const success = await window.submitAPI(formData);
-        if (success) {
-          navigate("/confirmation");
-          console.log("Form submitted successfully");
-        } else {
-          console.log("Form submission failed");
-        }
-      } else {
-        console.error(
-          "submitAPI not found. The script may not have loaded correctly."
-        );
-      }
-    } catch (error) {
-      console.error("Error while submitting the form:", error);
-    }
-    clearForm();
-  };
-  function clearForm() {
-    setFormData({
-      date: "",
-      time: "17:00",
-      guests: "",
-      occasion: "",
-    });
-    setDateTouched(false);
-    setGuestTouched(false);
-  }
-  function isValid() {
-    return formData.date != "" && formData.guests != "";
-  }
-  return (
-    <div className="form-div">
-      <form onSubmit={handleSubmit}>
-        <div id="form-date">
-          <div id="date">
-            <label htmlFor="res-date">
-              Choose date<sup>*</sup>
-            </label>
-            <input
-              type="date"
-              id="res-date"
-              name="date"
-              value={formData.date}
-              onChange={handleInputChange}
-              onBlur={() => {
-                setDateTouched(true);
-              }}
-            />
-          </div>
-
-          {dateTouched && formData.date == "" ? <DateErrorMessage /> : null}
-        </div>
-
-        <div id="form-time">
-          <label htmlFor="res-time">Choose time</label>
-          <select
-            id="res-time"
-            name="time"
-            value={formData.time}
-            onChange={handleInputChange}
-          >
-            {availableTimes.map((timeOption) => (
-              <option key={timeOption} value={timeOption}>
-                {timeOption}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div id="form-guest">
-          <div id="guest">
-            <label htmlFor="res-guests">
-              Number of guests <sup>*</sup>
-            </label>
-            <input
-              type="number"
-              id="res-guests"
-              name="guests"
-              value={formData.guests}
-              placeholder="0"
-              min={1}
-              max={10}
-              onChange={handleInputChange}
-              onBlur={() => {
-                setGuestTouched(true);
-              }}
-            />
-          </div>
-          {guestTouched && formData.guests == "" ? <GuestErrorMessage /> : null}
-        </div>
-
-        <div id="form-occassion">
-          <label htmlFor="res-occasion">Occasion</label>
-          <select
-            type="text"
-            id="res-occasion"
-            name="occasion"
-            value={formData.occasion}
-            onChange={handleInputChange}
-          >
-            <option>Birthday</option>
-            <option>Anniversary</option>
-          </select>
-        </div>
-        <button
-          disabled={!isValid()}
-          className={isValid() ? "enabled" : "disabled"}
-          type="submit"
-          id="form-submit"
-        >
-          Submit reservation
-        </button>
-      </form>
-    </div>
-  );
+function OccasionErrorMessage() {
+  return <p className="confirm-message">You must choose an occasion!</p>;
 }
-
-export default BookingForm;
-*/
+function DinnerErrorMessage() {
+  return <p className="confirm-message">There must be at least one Dinner!</p>;
+}
 
 function BookingForm() {
   const [formData, setFormData] = useState({
     place: "",
     date: "",
-    dinners: "",
-    occassion: "Select Occassion",
-    time: "",
+    dinners: "No Of Dinners",
+    occassion: "select occassion",
+    time: "select time",
   });
   const availableTimes = [
     "5:00pm",
@@ -182,13 +46,45 @@ function BookingForm() {
     "10 dinners",
   ];
 
+  const [dateTouched, setDateTouched] = useState(false);
+  const [dinnerTouched, setDinnerTouched] = useState(false);
+  const [occassionTouched, setOccassionTouched] = useState(false);
+  const [timeTouched, setTimeTouched] = useState(false);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
       [name]: value,
     });
+    console.log(formData);
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    clearForm();
+  };
+  function clearForm() {
+    setFormData({
+      place: "",
+      date: "",
+      dinners: "No Of Dinners",
+      occassion: "select occassion",
+      time: "select time",
+    });
+    setDateTouched(false);
+    setDinnerTouched(false);
+    setOccassionTouched(false);
+    setTimeTouched(false);
+  }
+  function isValid() {
+    return (
+      formData.place != "" &&
+      formData.date != "" &&
+      formData.dinners != "No Of Dinners" &&
+      formData.occassion != "select occassion" &&
+      formData.time != "select time"
+    );
+  }
   return (
     <form>
       <div id="form-div">
@@ -203,7 +99,7 @@ function BookingForm() {
                 type="radio"
                 id="place1"
                 name="place"
-                value={formData.place}
+                value="indoor"
                 onChange={handleInputChange}
               />
             </div>
@@ -213,7 +109,7 @@ function BookingForm() {
                 type="radio"
                 id="place2"
                 name="place"
-                value={formData.radio}
+                value="outdoor"
                 onChange={handleInputChange}
               />
             </div>
@@ -227,7 +123,11 @@ function BookingForm() {
                 name="date"
                 value={formData.date}
                 onChange={handleInputChange}
+                onBlur={() => {
+                  setDateTouched(true);
+                }}
               />
+              {dateTouched && formData.date == "" ? <DateErrorMessage /> : null}
             </div>
             <div id="dinner">
               <label htmlFor="dinners">Number of Dinners</label>
@@ -236,8 +136,13 @@ function BookingForm() {
                 name="dinners"
                 value={formData.dinners}
                 onChange={handleInputChange}
+                onBlur={() => {
+                  setDinnerTouched(true);
+                }}
               >
-                <option value="No Of Dinners">No Of Dinners</option>
+                <option value="No Of Dinners" selected>
+                  No Of Dinners
+                </option>
                 {noOfDinners.map((dinner, index) => {
                   return (
                     <option key={index} value={dinner}>
@@ -246,6 +151,9 @@ function BookingForm() {
                   );
                 })}
               </select>
+              {dinnerTouched && formData.dinners == "No Of Dinners" ? (
+                <DinnerErrorMessage />
+              ) : null}
             </div>
           </div>
           <div id="occ-time">
@@ -256,8 +164,13 @@ function BookingForm() {
                 name="occassion"
                 value={formData.occassion}
                 onChange={handleInputChange}
+                onBlur={() => {
+                  setOccassionTouched(true);
+                }}
               >
-                <option value="select occassion">Select occassion</option>
+                <option value="select occassion" selected>
+                  Select occassion
+                </option>
                 <option value="no special occassion">
                   No special Occasion
                 </option>
@@ -265,6 +178,9 @@ function BookingForm() {
                 <option value="Anniversary">Anniversary</option>
                 <option value="Engagement">Engagement</option>
               </select>
+              {occassionTouched && formData.occassion == "select occassion" ? (
+                <OccasionErrorMessage />
+              ) : null}
             </div>
             <div id="time-div">
               <label htmlFor="time">Time</label>
@@ -273,8 +189,13 @@ function BookingForm() {
                 name="time"
                 value={formData.time}
                 onChange={handleInputChange}
+                onBlur={() => {
+                  setTimeTouched(true);
+                }}
               >
-                <option value="select time">Select Time</option>
+                <option value="select time" selected>
+                  Select Time
+                </option>
                 {availableTimes.map((time, index) => {
                   return (
                     <option key={index} value={time}>
@@ -283,6 +204,9 @@ function BookingForm() {
                   );
                 })}
               </select>
+              {timeTouched && formData.time == "select time" ? (
+                <TimeErrorMessage />
+              ) : null}
             </div>
           </div>
         </div>
@@ -292,8 +216,14 @@ function BookingForm() {
         <img src={img2} alt="chief" />
         <img src={img3} alt="food" />
       </div>
-      <div id="form-btn">
-        <button id="first-btn" className="form-btn">
+      <div className="form-btn">
+        <button
+          id="first-btn"
+          disabled={!isValid()}
+          className={isValid() ? "enabled" : "disabled"}
+          onClick={handleSubmit}
+          type="submit"
+        >
           Reserve a Table
         </button>
       </div>

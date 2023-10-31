@@ -1,5 +1,5 @@
 {
-  "homepage": "http://zekud.github.io/little-lemon",
+  "homepage": "http://zekua.me/little-lemon",
   "name": "little-lemon",
   "version": "0.1.0",
   "private": true,
@@ -17,7 +17,7 @@
     "start": "react-scripts start",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build && cp build/index.html build/404.html",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
