@@ -366,78 +366,6 @@ footer .active {
   background-color: #edefee;
   color: #333333;
 }
-/*
-.form-div {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin: 20px 0px;
-  align-items: center;
-}
-form {
-  display: flex;
-  flex-direction: column;
-  width: 40%;
-  height: auto;
-  border: 2px solid #495e57;
-  border-radius: 10px;
-}
-#form-date {
-  font-size: 25px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5px 16px;
-}
-#date {
-  display: flex;
-  flex-direction: column;
-}
-#form-time {
-  font-size: 25px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5px 16px;
-}
-#form-guest {
-  font-size: 25px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5px 16px;
-}
-#guest {
-  display: flex;
-  flex-direction: column;
-}
-#form-occassion {
-  font-size: 25px;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 5px 16px;
-}
-#form-submit {
-  font-size: large;
-  margin: 10px;
-  padding: 5px 5px;
-  font-size: xx-large;
-  background-color: #495e57;
-  color: #fff;
-  border: 1px solid #495e57;
-  border-radius: 10px;
-}
-sup {
-  color: red;
-  font-size: 25px;
-}
-
-*/
 #form-div {
   display: flex;
   justify-content: center;
@@ -449,7 +377,7 @@ sup {
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 50%;
+  width: 55%;
 }
 #reserve-div {
   display: flex;
@@ -458,12 +386,12 @@ sup {
   font-size: 60px;
   font-weight: bold;
 }
+
 #place-container {
   display: flex;
   justify-content: space-between;
 }
 .each-place label {
-  margin-right: 20px;
   font-size: 40px;
   cursor: pointer;
   color: #edefee;
@@ -471,39 +399,61 @@ sup {
 .each-place input[type="radio"] {
   height: 18px;
   width: 20px;
+  margin: 20px;
   cursor: pointer;
   background-color: initial;
 }
 input[type="radio"]:checked {
   accent-color: #face14;
 }
+label {
+  margin: 0px;
+}
+
 #date-dinner {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  height: auto;
+  width: 100%;
+}
+.date-err {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  margin-right: 30px;
 }
 #date-div {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 0.5rem;
 }
 #date-div label {
   font-size: 20px;
   color: #edefee;
 }
 #date-div input {
-  width: auto;
+  width: 100%;
   padding: 5px 16px;
+  height: 3.5rem;
   font-size: 30px;
-  background-color: #edefee;
-  color: #333333;
   outline: none;
   border-radius: 10px;
+  text-align: center;
 }
 #dinner {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  justify-content: center;
+  width: 100%;
+}
+.dinner-err {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
 }
 #dinner label {
   font-size: 20px;
@@ -511,23 +461,32 @@ input[type="radio"]:checked {
 }
 #dinner select {
   padding: 5px 16px;
+  height: 3.5rem;
   font-size: 30px;
-  background-color: #edefee;
-  color: #333333;
   outline: none;
   border-radius: 10px;
+  text-align: center;
 }
+
 #occ-time {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  height: auto;
+  margin-bottom: 1.3rem;
+  width: 100%;
+}
+.occ-err {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
+  margin-right: 30px;
 }
 #occ {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  justify-content: center;
+  width: 100%;
 }
 #occ label {
   font-size: 20px;
@@ -536,16 +495,23 @@ input[type="radio"]:checked {
 #occ select {
   width: auto;
   padding: 5px 16px;
+  height: 3.5rem;
   font-size: 30px;
-  background-color: #edefee;
-  color: #333333;
   outline: none;
   border-radius: 10px;
+  text-align: center;
 }
 #time-div {
   display: flex;
   flex-direction: column;
-  width: 45%;
+  justify-content: center;
+  width: 100%;
+}
+.time-err {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: 100%;
 }
 #time-div label {
   font-size: 20px;
@@ -553,11 +519,19 @@ input[type="radio"]:checked {
 }
 #time-div select {
   padding: 5px 16px;
+  height: 3.5rem;
   font-size: 30px;
-  background-color: #edefee;
-  color: #333333;
   outline: none;
   border-radius: 10px;
+  text-align: center;
+}
+.input-selected {
+  background-color: #495e57;
+  color: #edefee;
+  font-weight: bold;
+  border: 0px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -2px -3px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s ease-in-out;
 }
 #form-img-div {
   display: flex;
@@ -572,7 +546,7 @@ input[type="radio"]:checked {
   border-radius: 5px;
   margin: 0px 8px 0px 8px;
 }
-.form-btn {
+.form-btn-div {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -580,10 +554,31 @@ input[type="radio"]:checked {
   height: auto;
   margin: 10px 0px 10px 0px;
 }
-.form-btn button:disabled {
+#form-btn {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+  color: #000000;
+  width: 230px;
+  height: 60px;
+  border-radius: 16px;
+  border: 0px solid #face14;
+  margin-top: 12px;
+  outline: none;
+}
+.enabled {
+  cursor: pointer;
+  background-color: #face14;
+}
+.enabled:hover {
+  background-color: #fde57c;
+}
+.disabled {
+  background-color: #edefee;
   cursor: not-allowed;
 }
 .confirm-message {
   font-size: large;
   color: red;
+  margin-bottom: 0;
 }
