@@ -467,7 +467,6 @@ label {
   border-radius: 10px;
   text-align: center;
 }
-
 #occ-time {
   display: flex;
   justify-content: space-between;
@@ -533,6 +532,7 @@ label {
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2), -2px -3px 5px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease-in-out;
 }
+
 #form-img-div {
   display: flex;
   height: auto;

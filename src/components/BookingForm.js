@@ -50,6 +50,7 @@ function BookingForm() {
   const [dinnerTouched, setDinnerTouched] = useState(false);
   const [occassionTouched, setOccassionTouched] = useState(false);
   const [timeTouched, setTimeTouched] = useState(false);
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -106,6 +107,7 @@ function BookingForm() {
               />
             </div>
             <div className="each-place">
+              <label htmlFor="place2">Outdoor seating</label>
               <input
                 type="radio"
                 id="place2"
@@ -114,7 +116,6 @@ function BookingForm() {
                 value="outdoor"
                 onChange={handleInputChange}
               />
-              <label htmlFor="place2">Outdoor seating</label>
             </div>
           </div>
           <div id="date-dinner">
@@ -131,6 +132,7 @@ function BookingForm() {
                   onBlur={() => {
                     setDateTouched(true);
                   }}
+                  placeholder="Select Date"
                 />
               </div>
               {dateTouched && formData.date == "" ? <DateErrorMessage /> : null}
