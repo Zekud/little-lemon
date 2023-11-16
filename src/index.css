@@ -391,21 +391,31 @@ footer .active {
   display: flex;
   justify-content: space-between;
 }
+.each-place {
+  display: flex;
+  align-items: center;
+}
 .each-place label {
-  font-size: 40px;
+  font-size: 35px;
   cursor: pointer;
   color: #edefee;
+  margin-right: 15px;
 }
-.each-place input[type="radio"] {
+.each-place input {
   height: 18px;
   width: 20px;
-  margin: 20px;
   cursor: pointer;
-  background-color: initial;
 }
-input[type="radio"]:checked {
-  accent-color: #face14;
+
+.place-span {
+  display: flex;
+  width: 23px;
+  height: 22px;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
 }
+
 label {
   margin: 0px;
 }
@@ -441,13 +451,20 @@ label {
   font-size: 30px;
   outline: none;
   border-radius: 10px;
+  border: 0px solid;
   text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+#date-div input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
 }
 #dinner {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 .dinner-err {
   display: flex;
@@ -466,6 +483,8 @@ label {
   outline: none;
   border-radius: 10px;
   text-align: center;
+  appearance: none;
+  cursor: pointer;
 }
 #occ-time {
   display: flex;
@@ -485,6 +504,7 @@ label {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
   width: 100%;
 }
 #occ label {
@@ -499,12 +519,28 @@ label {
   outline: none;
   border-radius: 10px;
   text-align: center;
+  appearance: none;
+  cursor: pointer;
 }
+
+#icon {
+  position: absolute;
+  right: 15px;
+  top: 45px;
+}
+.green {
+  color: #495e57;
+}
+.white {
+  color: #edefee;
+}
+
 #time-div {
   display: flex;
   flex-direction: column;
   justify-content: center;
   width: 100%;
+  position: relative;
 }
 .time-err {
   display: flex;
@@ -523,6 +559,8 @@ label {
   outline: none;
   border-radius: 10px;
   text-align: center;
+  appearance: none;
+  cursor: pointer;
 }
 .input-selected {
   background-color: #495e57;
@@ -538,7 +576,8 @@ label {
   height: auto;
   justify-content: center;
   align-items: center;
-  margin: 10px 0 10px 0;
+  margin: 40px 0px;
+  position: relative;
 }
 #form-img-div img {
   width: 300px;
@@ -566,19 +605,186 @@ label {
   margin-top: 12px;
   outline: none;
 }
-.enabled {
-  cursor: pointer;
-  background-color: #face14;
-}
-.enabled:hover {
-  background-color: #fde57c;
-}
-.disabled {
-  background-color: #edefee;
-  cursor: not-allowed;
-}
 .confirm-message {
   font-size: large;
   color: red;
   margin-bottom: 0;
+}
+#back-btn {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  width: 100%;
+  height: auto;
+}
+#back-btn button {
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  text-align: center;
+  color: #495e57;
+  cursor: pointer;
+  background-color: #face14;
+  border: 1px solid #edefee;
+  border-radius: 10px;
+  outline: none;
+  position: relative;
+  margin: 20px 0px 10px 0px;
+}
+.back-icon {
+  color: #495e57;
+  position: absolute;
+  top: 22%;
+  left: 22%;
+}
+#first-last {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+#first-last input {
+  width: 300px;
+  padding: 2px 10px;
+  font-size: 20px;
+  outline: none;
+  margin: 5px 0px 5px 0px;
+}
+#input-err {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+.label-input {
+  display: flex;
+  flex-direction: column;
+}
+span {
+  font-size: 20px;
+  color: #edefee;
+  line-height: 0.5;
+}
+.confirm-label {
+  color: #edefee;
+  font-size: 20px;
+}
+#details-comment {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+#details {
+  width: 300px;
+  height: 190px;
+  background-color: #333333;
+  color: #edefee;
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin: 20px 0px 10px 0px;
+}
+#details h3 {
+  color: #face14;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+#details span {
+  font-size: x-large;
+}
+#details .sec-span {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #ee9972;
+}
+#details p {
+  display: flex;
+  justify-content: space-between;
+  margin: 3px 0px;
+  padding: 5px;
+}
+#comment-div {
+  width: 300px;
+  height: 170px;
+}
+#comment {
+  padding: 2px 6px;
+  font-size: 22px;
+  line-height: 1;
+  outline: none;
+}
+#agreement {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0px 0px 20px;
+  justify-content: center;
+}
+#check-label {
+  display: flex;
+  align-items: center;
+}
+#agreement input[type="radio"] {
+  height: 18px;
+  /* add any other styles you want here */
+}
+#agreement label {
+  color: #edefee;
+  font-size: 20px;
+  padding-left: 5px;
+}
+#agreement span {
+  text-decoration: underline;
+}
+.privacy-span {
+  display: flex;
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  justify-content: center;
+  align-items: center;
+}
+.confirm-btn {
+  background-color: #face14;
+  cursor: pointer;
+}
+.show-err {
+  background-color: #fde57c;
+  cursor: auto;
+}
+.hide {
+  display: none;
+}
+.show {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  background-color: #edefee;
+  color: #333333;
+  border-radius: 10px;
+  padding: 20px;
+  width: 600px;
+  height: 180px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "Markazi Text", serif;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.show p {
+  margin-bottom: 2px;
+}
+#back-to-home {
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Karla", sans-serif;
+  color: #000000;
+  width: 150px;
+  height: 40px;
+  border-radius: 16px;
+  border: 0px solid #face14;
+  outline: none;
+  background-color: #face14;
+  cursor: pointer;
+}
+#back-to-home:hover {
+  background-color: #fde57c;
 }

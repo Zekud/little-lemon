@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import img1 from "../icons_assets/restaurant.jpg";
 import img2 from "../icons_assets/restaurant chef B.jpg";
 import img3 from "../icons_assets/restauranfood.jpg";
@@ -17,14 +16,28 @@ function DinnerErrorMessage() {
   return <p className="confirm-message">There must be at least one Dinner!</p>;
 }
 
-function BookingForm() {
-  const [formData, setFormData] = useState({
-    place: null,
-    date: "",
-    dinners: "No Of Dinners",
-    occassion: "select occassion",
-    time: "select time",
-  });
+function BookingForm(props) {
+  const {
+    setStep2,
+    formData,
+    handleInputChange,
+    selectedPlace,
+    setSelectedPlace,
+    place1Checked,
+    setPlace1Checked,
+    place2Checked,
+    setPlace2Checked,
+    dateTouched,
+    setDateTouched,
+    dinnerTouched,
+    setDinnerTouched,
+    occassionTouched,
+    setOccassionTouched,
+    timeTouched,
+    setTimeTouched,
+    placeTouched,
+    setPlaceTouched,
+  } = props;
   const availableTimes = [
     "5:00pm",
     "6:00pm",
@@ -46,38 +59,19 @@ function BookingForm() {
     "10 dinners",
   ];
 
-  const [dateTouched, setDateTouched] = useState(false);
-  const [dinnerTouched, setDinnerTouched] = useState(false);
-  const [occassionTouched, setOccassionTouched] = useState(false);
-  const [timeTouched, setTimeTouched] = useState(false);
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
-  const radio = document.getElementsByClassName("radio-input");
   const handleSubmit = (e) => {
     e.preventDefault();
-    clearForm();
+    if (!isValid()) {
+      setPlaceTouched(true);
+      setDateTouched(true);
+      setDinnerTouched(true);
+      setOccassionTouched(true);
+      setTimeTouched(true);
+    } else {
+      setStep2(true);
+    }
   };
-  function clearForm() {
-    setFormData({
-      place: null,
-      date: "",
-      dinners: "No Of Dinners",
-      occassion: "select occassion",
-      time: "select time",
-    });
-    setDateTouched(false);
-    setDinnerTouched(false);
-    setOccassionTouched(false);
-    setTimeTouched(false);
-    radio[0].checked = false;
-    radio[1].checked = false;
-  }
+
   function isValid() {
     return (
       formData.place != null &&
@@ -97,25 +91,47 @@ function BookingForm() {
           <div id="place-container">
             <div className="each-place">
               <label htmlFor="place1">Indoor seating</label>
-              <input
-                type="radio"
-                id="place1"
-                className="radio-input"
-                name="place"
-                value="indoor"
-                onChange={handleInputChange}
-              />
+              <span
+                className={placeTouched && !selectedPlace ? "place-span" : null}
+              >
+                <input
+                  type="checkbox"
+                  id="place1"
+                  className="radio-input"
+                  name="place"
+                  value="Indoor"
+                  onChange={(e) => {
+                    setPlace1Checked(!place1Checked);
+                    setPlace2Checked(false);
+                    setPlaceTouched(true);
+                    setSelectedPlace(e.target.checked ? e.target.value : null);
+                    handleInputChange(e);
+                  }}
+                  checked={selectedPlace === "Indoor" && place1Checked}
+                />
+              </span>
             </div>
             <div className="each-place">
               <label htmlFor="place2">Outdoor seating</label>
-              <input
-                type="radio"
-                id="place2"
-                className="radio-input"
-                name="place"
-                value="outdoor"
-                onChange={handleInputChange}
-              />
+              <span
+                className={placeTouched && !selectedPlace ? "place-span" : null}
+              >
+                <input
+                  type="checkbox"
+                  id="place2"
+                  className="radio-input"
+                  name="place"
+                  value="Outdoor"
+                  onChange={(e) => {
+                    setPlace2Checked(!place2Checked);
+                    setPlace1Checked(false);
+                    setPlaceTouched(true);
+                    setSelectedPlace(e.target.checked ? e.target.value : null);
+                    handleInputChange(e);
+                  }}
+                  checked={selectedPlace === "Outdoor" && place2Checked}
+                />
+              </span>
             </div>
           </div>
           <div id="date-dinner">
@@ -165,6 +181,15 @@ function BookingForm() {
                     );
                   })}
                 </select>
+                <span id="icon">
+                  <i
+                    className={
+                      formData.dinners !== "No Of Dinners"
+                        ? "fas fa-chevron-up white"
+                        : "fas fa-chevron-down green"
+                    }
+                  ></i>
+                </span>
               </div>
               {dinnerTouched && formData.dinners == "No Of Dinners" ? (
                 <DinnerErrorMessage />
@@ -199,6 +224,15 @@ function BookingForm() {
                   <option value="Anniversary">Anniversary</option>
                   <option value="Engagement">Engagement</option>
                 </select>
+                <span id="icon">
+                  <i
+                    className={
+                      formData.occassion !== "select occassion"
+                        ? "fas fa-chevron-up white"
+                        : "fas fa-chevron-down green"
+                    }
+                  ></i>
+                </span>
               </div>
               {occassionTouched && formData.occassion == "select occassion" ? (
                 <OccasionErrorMessage />
@@ -230,6 +264,15 @@ function BookingForm() {
                     );
                   })}
                 </select>
+                <span id="icon">
+                  <i
+                    className={
+                      formData.time !== "select time"
+                        ? "fas fa-chevron-up white"
+                        : "fas fa-chevron-down green"
+                    }
+                  ></i>
+                </span>
               </div>
               {timeTouched && formData.time == "select time" ? (
                 <TimeErrorMessage />
@@ -246,10 +289,8 @@ function BookingForm() {
       <div className="form-btn-div">
         <button
           id="form-btn"
-          disabled={!isValid()}
-          className={isValid() ? "enabled" : "disabled"}
+          className={`confirm-btn ${!isValid() ? "show-err" : null}`}
           onClick={handleSubmit}
-          type="submit"
         >
           Reserve a Table
         </button>
