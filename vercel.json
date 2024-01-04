@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/(.*)",
-      "destination": "/little-lemon"
+      "destination": "/little-lemon/index.html"
     }
   ]
 }
