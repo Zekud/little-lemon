@@ -11,12 +11,15 @@ function App() {
   return (
     <>
       <Nav />
+
       <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/menu" element={<Specials />} />
-        <Route path="/about" element={<ABOUT />} />
-        <Route path="/booking-page" element={<BookingPage />} />
-        <Route path="/confirmation" element={<ConfirmedBooking />} />
+        <Route path="/">
+          <Route index element={<Homepage />} />
+          <Route path="/menu" element={<Specials />} />
+          <Route path="/about" element={<ABOUT />} />
+          <Route path="/booking-page" element={<BookingPage />} />
+          <Route path="/confirmation" element={<ConfirmedBooking />} />
+        </Route>
       </Routes>
       <Footer />
     </>
