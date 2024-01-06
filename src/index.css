@@ -19,11 +19,13 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70px;
+  height: auto;
   position: sticky;
   top: 0;
   background-color: #fff;
   z-index: 1;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 nav ul {
   display: flex;
@@ -33,6 +35,8 @@ nav ul {
   margin: 0;
   padding: 20px;
   height: 100%;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 nav ul li {
   cursor: pointer;
@@ -62,8 +66,13 @@ header {
   justify-content: space-around;
   align-items: center;
   background-color: #495e57;
-  height: 400px;
+  height: 500px;
   padding: 20px;
+  max-width: 100%;
+  flex-wrap: wrap;
+  @media screen and (max-width: 768px) {
+    height: auto;
+  }
 }
 header aside {
   max-width: 560px;
@@ -116,7 +125,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-top: 70px;
-  width: 100%;
+  max-width: 100%;
 }
 #sec-div {
   display: flex;
@@ -125,7 +134,7 @@ main {
   align-items: center;
   margin: 16px;
   padding: 16px;
-  width: 100%;
+  max-width: 100%;
 }
 #sec-div h1 {
   font-size: 40px;
@@ -144,6 +153,7 @@ main {
   border: 0px solid #face14;
   cursor: pointer;
   outline: none;
+  margin: 20px 0px 20px 0px;
 }
 
 #second-btn:hover {
@@ -153,7 +163,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 .whole {
   width: 270px;
@@ -245,7 +256,11 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
-  height: 450px;
+  height: auto;
+  @media screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 #third-aside {
   display: flex;
@@ -255,6 +270,18 @@ main {
   max-width: 50%;
   padding: 20px;
   margin-left: 10rem;
+  @media screen and (max-width: 800px) {
+    width: 400px;
+    margin-left: 0px;
+  }
+}
+#third-aside div,
+#third-aside div {
+  @media screen and (max-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 #third-aside :nth-child(1) {
   width: 100%;
@@ -263,13 +290,27 @@ main {
   max-width: 400px;
   margin-right: 50px;
   font-size: 20px;
+  @media screen and (max-width: 800px) {
+    margin-right: 0px;
+  }
 }
 #fourth-aside {
   max-width: 50%;
-  height: 100%;
+  height: 500px;
   position: relative;
   padding: 20px;
   margin: 20px;
+  @media screen and (max-width: 800px) {
+    width: 400px;
+  }
+  @media screen and (max-width: 1080px) and (min-width: 800px) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 200px;
+    margin-top: 120px;
+  }
 }
 #fourth-aside :nth-child(1) {
   position: absolute;
@@ -278,6 +319,9 @@ main {
   width: 220px;
   border-radius: 7px;
   z-index: 1;
+  @media screen and (max-width: 1080px) {
+    display: none;
+  }
 }
 #fourth-aside :nth-child(2) {
   position: absolute;
@@ -285,6 +329,20 @@ main {
   height: 300px;
   width: 230px;
   border-radius: 7px;
+  @media screen and (max-width: 800px) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+  }
+  @media screen and (max-width: 1080px) and (min-width: 800px) {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+  }
 }
 footer {
   display: flex;
@@ -292,6 +350,12 @@ footer {
   align-items: center;
   height: 200px;
   background-color: #333333;
+  flex-wrap: wrap;
+  max-width: 100%;
+  @media screen and (max-width: 768px) {
+    height: auto;
+    flex-direction: column;
+  }
 }
 footer ul {
   margin: 0;
@@ -303,11 +367,25 @@ footer aside {
 }
 footer aside:not(:nth-child(4)) {
   border-right: 1px solid #edefee;
+  @media screen and (max-width: 768px) {
+    border-right: none;
+    border-bottom: 1px solid #edefee;
+  }
 }
 
 #fifth-aside img {
   width: 200px;
   height: 100px;
+  @media screen and (max-width: 768px) {
+    width: 100px;
+    height: 100px;
+  }
+}
+#fifth-aside {
+  @media screen and (max-width: 768px) {
+    width: 200px;
+    text-align: center;
+  }
 }
 #sixth-aside {
   display: flex;
@@ -315,6 +393,10 @@ footer aside:not(:nth-child(4)) {
   align-items: center;
   justify-content: center;
   padding: 0px 50px;
+  @media screen and (max-width: 768px) {
+    height: 200px;
+    text-align: center;
+  }
 }
 #sixth-aside li {
   font-size: 18px;
@@ -329,6 +411,12 @@ footer aside:not(:nth-child(4)) {
   font-size: 18px;
   color: #edefee;
   padding: 0px 20px;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: none;
+  }
 }
 #seventh-aside ul {
   list-style: none;
@@ -345,6 +433,9 @@ footer aside:not(:nth-child(4)) {
 #eighth-aside ul {
   list-style: none;
   padding: 10px;
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
 }
 #eighth-aside ul .icons {
   padding: 5px;
@@ -369,7 +460,7 @@ footer .active {
 #form-div {
   display: flex;
   justify-content: center;
-  width: 100%;
+  max-width: 100%;
   height: auto;
   background-color: #495e57;
 }
@@ -378,6 +469,10 @@ footer .active {
   flex-direction: column;
   height: 100%;
   width: 55%;
+  @media screen and (max-width: 775px) {
+    width: 100%;
+    padding: 30px;
+  }
 }
 #reserve-div {
   display: flex;
@@ -385,11 +480,23 @@ footer .active {
   color: #face14;
   font-size: 60px;
   font-weight: bold;
+  @media screen and (max-width: 775px) {
+    font-size: 40px;
+  }
+  @media screen and (max-width: 545px) {
+    width: 95%;
+    justify-content: center;
+  }
 }
 
 #place-container {
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 545px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .each-place {
   display: flex;
@@ -425,6 +532,10 @@ label {
   justify-content: space-between;
   height: auto;
   width: 100%;
+  @media screen and (max-width: 545px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .date-err {
   display: flex;
@@ -432,6 +543,10 @@ label {
   height: auto;
   width: 100%;
   margin-right: 30px;
+  @media screen and (max-width: 545px) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
 }
 #date-div {
   display: flex;
@@ -471,6 +586,9 @@ label {
   flex-direction: column;
   height: auto;
   width: 100%;
+  @media screen and (max-width: 545px) {
+    margin-bottom: 20px;
+  }
 }
 #dinner label {
   font-size: 20px;
@@ -492,6 +610,9 @@ label {
   height: auto;
   margin-bottom: 1.3rem;
   width: 100%;
+  @media screen and (max-width: 545px) {
+    flex-direction: column;
+  }
 }
 .occ-err {
   display: flex;
@@ -499,6 +620,10 @@ label {
   height: auto;
   width: 100%;
   margin-right: 30px;
+  @media screen and (max-width: 545px) {
+    margin-right: 0px;
+    margin-bottom: 20px;
+  }
 }
 #occ {
   display: flex;
@@ -578,12 +703,14 @@ label {
   align-items: center;
   margin: 40px 0px;
   position: relative;
+  max-width: 100%;
+  flex-wrap: wrap;
 }
 #form-img-div img {
   width: 300px;
   height: 200px;
   border-radius: 5px;
-  margin: 0px 8px 0px 8px;
+  margin: 8px 8px 8px 8px;
 }
 .form-btn-div {
   display: flex;
