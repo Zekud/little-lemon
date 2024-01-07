@@ -826,6 +826,9 @@ span {
   #dinner-err {
     margin-bottom: 20px;
   }
+  .date-err {
+    margin-right: 0px;
+  }
   #occ-time {
     flex-direction: column;
   }
