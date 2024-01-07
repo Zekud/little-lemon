@@ -942,4 +942,8 @@ span {
   #agreement {
     align-items: center;
   }
+  .show {
+    width: 80%;
+    height: auto;
+  }
 }
