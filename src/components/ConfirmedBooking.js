@@ -114,8 +114,8 @@ function ConfirmedBooking(props) {
   }
   return (
     <form>
-      <div id="form-div">
-        <div id="form-main-div">
+      <div id="form-div" className="confirmed-form-div">
+        <div id="form-main-div" className="confirmed-form-main-div">
           <div id="back-btn">
             <button type="button" onClick={() => setStep2(false)}>
               <i class="fa fa-caret-left back-icon" aria-hidden="true"></i>

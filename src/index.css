@@ -931,4 +931,15 @@ span {
   #fourth-aside :nth-child(1) {
     display: none;
   }
+  #first-last {
+    flex-direction: column;
+    align-items: center;
+  }
+  #details-comment {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  #agreement {
+    align-items: center;
+  }
 }
